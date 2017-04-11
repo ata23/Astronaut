@@ -1,4 +1,4 @@
-package com.astro_naut.astronaut;
+package com.astronauts.astronaut;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

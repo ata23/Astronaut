@@ -1,4 +1,4 @@
-package com.astro_naut.astronaut;
+package com.astronauts.astronaut;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
