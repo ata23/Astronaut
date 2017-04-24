@@ -57,6 +57,9 @@ dependencies {
     //RxJava
     compile "io.reactivex.rxjava2:rxjava:2.0.9"
 
+    //Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+
     //AssertJ
     testCompile 'org.assertj:assertj-core:3.6.2'
 }
