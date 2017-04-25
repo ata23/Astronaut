@@ -3,7 +3,7 @@ package com.astronauts.astronaut.network.api;
 import org.json.JSONObject;
 
 import retrofit2.Call;
-import retrofit2.http.Header;
+import retrofit2.http.Field;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -12,7 +12,7 @@ public interface ApiProvider {
     @POST("comments/add/{linkId}/{upperCommentId}/userkey/{userKey}/appkey/{appkey}/")
     Call<JSONObject> commentAdd(@Path("linkId") String linkId, @Path("upperCommentId") String upperCommentId,
                                 @Path("userkey") String userkey, @Path("appkey") String appkey,
-                                @Header("body") String content, @Header("embed") String embedUrl);
+                                @Field("body") String content, @Field("embed") String embedUrl);
 
     @POST("comments/plus/{linkId}/{commentId}/userkey/{userKey}/appkey/{appkey}/")
     Call<JSONObject> commentPlus(@Path("linkId") String linkId, @Path("commentId") String commentId,
@@ -24,7 +24,7 @@ public interface ApiProvider {
 
     @POST("comments/edit/{commentId}/userkey/{userkey}/appkey/{appkey}/")
     Call<JSONObject> commentEdit(@Path("commentId") String commentId, @Path("userkey") String userkey,
-                                 @Path("appkey") String appkey, @Header("body") String content);
+                                 @Path("appkey") String appkey, @Field("body") String content);
 
     @POST("comments/delete/{commentId}/userkey/{userkey}/appkey/{appkey}/")
     Call<JSONObject> commentDelete(@Path("commentId") String commentId, @Path("userkey") String userkey,
@@ -46,13 +46,13 @@ public interface ApiProvider {
     Call<JSONObject> linkBury(@Path("linkId") String linkId, @Path("reasonId") String reasonId,
                               @Path("userkey") String userkey, @Path("appkey") String appkey);
 
-    @POST("link/comments/{linkId}/userkey/{userkey}/appkey/{appkey}/")
+    @POST("link/comments/{linkId}/appkey/{appkey}/")
     Call<JSONObject> linkComments(@Path("linkId") String linkId, @Path("appkey") String appkey);
 
-    @POST("link/reports/{linkId}/userkey/{userkey}/appkey/{appkey}/")
+    @POST("link/reports/{linkId}/appkey/{appkey}/")
     Call<JSONObject> linkReports(@Path("linkId") String linkId, @Path("appkey") String appkey);
 
-    @POST("link/digs/{linkId}/userkey/{userkey}/appkey/{appkey}/")
+    @POST("link/digs/{linkId}//appkey/{appkey}/")
     Call<JSONObject> linkDigs(@Path("linkId") String linkId, @Path("appkey") String appkey);
 
     @POST("link/related/{linkId}/userkey/{userkey}/appkey/{appkey}/")
@@ -147,5 +147,46 @@ public interface ApiProvider {
     @POST("profile/related/{userName}/appkey/{appkey}/page/{page}/")
     Call<JSONObject> profileRelated(@Path("userName") String userName, @Path("appkey") String appkey,
                                     @Path("page") String page);
+
+    @POST("search/index/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> searchIndex(@Path("appkey") String appkey, @Path("page") String page,
+                                 @Field("q") String query);
+
+    @POST("search/links/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> searchLinks(@Path("appkey") String appkey, @Path("page") String page,
+                                 @Field("q") String query, @Field("what") String what,
+                                 @Field("sort") String sort, @Field("when") String when,
+                                 @Field("form") String dateFrom, @Field("to") String dateTo,
+                                 @Field("votes") String votes);
+
+    @POST("search/entries/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> searchEntries(@Path("appkey") String appkey, @Path("page") String page,
+                                   @Field("q") String query);
+
+    @POST("search/profiles/appkey/{appkey}/")
+    Call<JSONObject> searchProfiles(@Path("appkey") String appkey, @Field("q") String query);
+
+    @POST("user/login/appkey/{appkey}/")
+    Call<JSONObject> userLogin(@Path("appkey") String appkey, @Field("login") String login,
+                               @Field("password") String password);
+
+    @POST("user/favorites/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> userFavorites(@Path("userkey") String userkey, @Path("appkey") String appkey);
+
+    @POST("user/observed/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> userObserved(@Path("userkey") String userkey, @Path("appkey") String appkey);
+
+    @POST("user/tags/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> userTags(@Path("userkey") String userkey, @Path("appkey") String appkey);
+
+    @POST("top/index/{year}/appkey/{appkey}/")
+    Call<JSONObject> topIndex(@Path("year") String year, @Path("month") String month,
+                             @Path("appkey") String appkey, @Field("page") String page);
+
+    @POST("top/date/{year}/{month}/appkey/{appkey}/")
+    Call<JSONObject> topDate(@Path("year") String year, @Path("appkey") String appkey);
+
+    @POST("top/hits/appkey/{appkey}/")
+    Call<JSONObject> topHits(@Path("appkey") String appkey);
 
 }
