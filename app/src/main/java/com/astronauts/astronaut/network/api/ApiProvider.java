@@ -117,7 +117,7 @@ public interface ApiProvider {
     Call<JSONObject> profileDigged(@Path("userName") String userName, @Path("appkey") String appkey,
                                    @Path("page") String page, @Header("apisign") String sign);
 
-    @POST("profile/Buried/{userName}/userkey/{userkey}/appkey/{appkey}/page/{page}/")
+    @POST("profile/buried/{userName}/userkey/{userkey}/appkey/{appkey}/page/{page}/")
     Call<JSONObject> profileBurried(@Path("userName") String userName, @Path("userkey") String userkey,
                                     @Path("appkey") String appkey, @Path("page") String page,
                                     @Header("apisign") String sign);
@@ -197,7 +197,7 @@ public interface ApiProvider {
 
     @POST("top/index/{year}/appkey/{appkey}/")
     Call<JSONObject> topIndex(@Path("year") String year, @Path("month") String month,
-                             @Path("appkey") String appkey, @Field("page") String page,
+                              @Path("appkey") String appkey, @Field("page") String page,
                               @Header("apisign") String sign);
 
     @POST("top/date/{year}/{month}/appkey/{appkey}/")
@@ -206,5 +206,111 @@ public interface ApiProvider {
 
     @POST("top/hits/appkey/{appkey}/")
     Call<JSONObject> topHits(@Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("related/plus/{linkId}/{linkedId}/userkey/{userKey}/appkey/{appkey}/")
+    Call<JSONObject> relatedPlus(@Path("linkId") String linkId, @Path("linkedId") String linkedId,
+                                 @Path("userkey") String userkey, @Path("appkey") String appkey,
+                                 @Header("apisign") String sign);
+
+    @POST("related/minus/{linkId}/{linkedId}/userkey/{userKey}/appkey/{appkey}/")
+    Call<JSONObject> relatedMinus(@Path("linkId") String linkId, @Path("linkedId") String linkedId,
+                                  @Path("userkey") String userkey, @Path("appkey") String appkey,
+                                  @Header("apisign") String sign);
+
+    @POST("related/plus/{linkId}/userkey/{userKey}/appkey/{appkey}/")
+    Call<JSONObject> relatedAdd(@Path("linkId") String linkId, @Path("userkey") String userkey,
+                                @Path("appkey") String appkey, @Field("url") String url,
+                                @Field("title") String title, @Field("plus18") String plus18,
+                                @Header("apisign") String sign);
+
+    @POST("mywykop/index/userkey/{userkey}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> mywykopIndex(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                  @Path("page") String page, @Header("apisign") String sign);
+
+    @POST("mywykop/tags/userkey/{userkey}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> mywykopTags(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                 @Path("page") String page, @Header("apisign") String sign);
+
+    @POST("mywykop/users/userkey/{userkey}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> mywykopUsers(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                  @Path("page") String page, @Header("apisign") String sign);
+
+    @POST("mywykop/notifications/userkey/{userkey}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> mywykopNotifications(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                          @Path("page") String page, @Header("apisign") String sign);
+
+    @POST("mywykop/notificationscount/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> mywykopNotificationsCount(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                               @Header("apisign") String sign);
+
+    @POST("mywykop/hashtagsnotifications/userkey/{userkey}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> mywykopHashTagsNotifications(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                                  @Path("page") String page, @Header("apisign") String sign);
+
+    @POST("mywykop/hashtagsnotificationscount/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> mywykopHashTagsNotificationsCount(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                                       @Header("apisign") String sign);
+
+    @POST("mywykop/readnotifications/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> mywykopReadNotifications(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                              @Header("apisign") String sign);
+
+    @POST("mywykop/readhashtagsnotifications/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> mywykopReadHashTagsNotifications(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                                      @Header("apisign") String sign);
+
+    @POST("mywykop/markasreadnotification/{notificationId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> mywykopMarkAsReadNotification(@Path("notificationId") String notificationId, @Path("userkey") String userkey,
+                                                   @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("entries/comments/{entryId}/appkey/{appkey}/")
+    Call<JSONObject> entriesIndex(@Path("entryId") String entryId, @Path("appkey") String appkey,
+                                  @Header("apisign") String sign);
+
+    //TODO Add FILE parameter in this request
+    @POST("entries/add/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesAdd(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                @Field("body") String content, @Field("embed") String url,
+                                @Header("apisign") String sign);
+
+    @POST("entries/edit/{entryId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesEdit(@Path("entryId") String entryId, @Path("userkey") String userkey,
+                                 @Path("appkey") String appkey, @Field("body") String content,
+                                 @Header("apisign") String sign);
+
+    @POST("entries/delete/{entryId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesDelete(@Path("entryId") String entryId, @Path("userkey") String userkey,
+                                   @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    //TODO Add FILE parameter in this request
+    @POST("entries/addcomment/{entryId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesAddComment(@Path("entryId") String entryId, @Path("userkey") String userkey,
+                                       @Path("appkey") String appkey, @Field("body") String content,
+                                       @Field("embed") String url, @Header("apisign") String sign);
+
+    @POST("entries/editcomment/{entryId}/{entryCommentId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesEditComment(@Path("entryId") String entryId, @Path("entryCommentId") String entryCommentId,
+                                        @Path("userkey") String userkey, @Path("appkey") String appkey,
+                                        @Field("body") String content, @Header("apisign") String sign);
+
+    @POST("entries/deletecomment/{entryId}/{entryCommentId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesDeleteComment(@Path("entryId") String entryId, @Path("entryCommentId") String entryCommentId,
+                                          @Path("userkey") String userkey, @Path("appkey") String appkey,
+                                          @Header("apisign") String sign);
+
+    @POST("entries/vote/{type}/{entryId}/{entryCommentId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesVote(@Path("type") String type, @Path("entryId") String entryId,
+                                 @Path("entryCommentId") String entryCommentId, @Path("userkey") String userkey,
+                                 @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("entries/unvote/{type}/{entryId}/{entryCommentId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesUnvote(@Path("type") String type, @Path("entryId") String entryId,
+                                   @Path("entryCommentId") String entryCommentId, @Path("userkey") String userkey,
+                                   @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("entries/favorite/{entryId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> entriesFavorite(@Path("entryId") String entryId, @Path("userkey") String userkey,
+                                     @Path("appkey") String appkey, @Header("apisign") String sign);
+
 
 }
