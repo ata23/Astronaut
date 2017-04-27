@@ -1,0 +1,14 @@
+<tabs>
+    <tab
+        id="@+id/tab_mirkoblog"
+        title="Mirkoblog" />
+    <tab
+        id="@+id/tab_moj_wykop"
+        title="Mój wykop" />
+    <tab
+        id="@+id/tab_profile"
+        title="Profil" />
+    <tab
+        id="@+id/tab_settings"
+        title="Ustawienia" />
+</tabs>
