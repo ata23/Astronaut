@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.astronauts.astronaut.R;
-import com.astronauts.astronaut.gui.fragment.MirkoblogFragment;
+import com.astronauts.astronaut.gui.fragment.MikroblogFragment;
 import com.astronauts.astronaut.gui.fragment.MojWykopFragment;
 import com.astronauts.astronaut.gui.fragment.ProfileFragment;
 import com.astronauts.astronaut.gui.fragment.SettingsFragment;
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(@IdRes int tabId) {
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 if (tabId == R.id.tab_mirkoblog) {
-                    MirkoblogFragment fragment = new MirkoblogFragment();
+                    MikroblogFragment fragment = new MikroblogFragment();
                     transaction.replace(R.id.contentContainer, fragment);
                 }
                 if (tabId == R.id.tab_moj_wykop) {
