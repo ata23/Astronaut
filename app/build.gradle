@@ -49,10 +49,10 @@ dependencies {
     androidTestCompile 'org.mockito:mockito-android:2.7.22'
     provided 'javax.annotation:jsr250-api:1.0'
 
-    //Mosby
-    compile 'com.hannesdorfmann.mosby3:mvi:3.0.2'
-    compile 'com.hannesdorfmann.mosby3:mvp:3.0.2'
-    compile 'com.hannesdorfmann.mosby3:viewstate:3.0.2'
+    //Mosby - probably we will not use this..
+//    compile 'com.hannesdorfmann.mosby3:mvi:3.0.2'
+//    compile 'com.hannesdorfmann.mosby3:mvp:3.0.2'
+//    compile 'com.hannesdorfmann.mosby3:viewstate:3.0.2'
 
     //RxJava
     compile "io.reactivex.rxjava2:rxjava:2.0.9"
@@ -62,6 +62,8 @@ dependencies {
 
     //Retrofit
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
 
     //AssertJ
     testCompile 'org.assertj:assertj-core:3.6.2'
