@@ -1,10 +1,11 @@
-package com.astronauts.astronaut;
+package com.astronauts.astronaut.gui;
 
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.FrameLayout;
 
+import com.astronauts.astronaut.R;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
