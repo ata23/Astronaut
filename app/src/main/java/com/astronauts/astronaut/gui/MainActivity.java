@@ -1,15 +1,17 @@
 package com.astronauts.astronaut.gui;
 
-import android.support.annotation.IdRes;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.annotation.IdRes;
 
 import com.astronauts.astronaut.R;
-import com.astronauts.astronaut.gui.fragment.MikroblogFragment;
-import com.astronauts.astronaut.gui.fragment.MojWykopFragment;
-import com.astronauts.astronaut.gui.fragment.ProfileFragment;
-import com.astronauts.astronaut.gui.fragment.SettingsFragment;
+import com.astronauts.astronaut.di.component.AppComponent;
+import com.astronauts.astronaut.di.module.ActivityModule;
+import com.astronauts.astronaut.framework.BaseActivity;
+import com.astronauts.astronaut.gui.fragment.impl.MikroblogFragment;
+import com.astronauts.astronaut.gui.fragment.impl.MojWykopFragment;
+import com.astronauts.astronaut.gui.fragment.impl.ProfileFragment;
+import com.astronauts.astronaut.gui.fragment.impl.SettingsFragment;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 
@@ -17,7 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     @BindView(R.id.bottomBar)
     BottomBar bottomBar;
 
@@ -35,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
             public void onTabSelected(@IdRes int tabId) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 if (tabId == R.id.tab_mirkoblog) {
                     MikroblogFragment fragment = new MikroblogFragment();
                     transaction.replace(R.id.contentContainer, fragment);
@@ -58,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public int getContainer() {
+        return R.id.contentContainer;
+    }
+
+    @Override
+    protected void performInjection(AppComponent appComponent) {
+        appComponent.plus(new ActivityModule()).inject(this);
     }
 }
 
