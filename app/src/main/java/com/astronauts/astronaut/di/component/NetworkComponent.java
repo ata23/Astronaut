@@ -1,7 +1,7 @@
-package com.astronauts.astronaut.network.component;
+package com.astronauts.astronaut.di.component;
 
 import com.astronauts.astronaut.gui.MainActivity;
-import com.astronauts.astronaut.network.module.NetworkModule;
+import com.astronauts.astronaut.di.module.NetworkModule;
 
 import javax.inject.Singleton;
 

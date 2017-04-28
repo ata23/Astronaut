@@ -1,4 +1,4 @@
-package com.astronauts.astronaut.network.module;
+package com.astronauts.astronaut.di.module;
 
 import com.astronauts.astronaut.utils.Cons;
 import com.google.gson.Gson;
