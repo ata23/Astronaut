@@ -1,7 +1,7 @@
 <tabs>
     <tab
-        id="@+id/tab_mirkoblog"
-        title="Mirkoblog" />
+        id="@+id/tab_mikroblog"
+        title="Mikroblog" />
     <tab
         id="@+id/tab_moj_wykop"
         title="Mój wykop" />

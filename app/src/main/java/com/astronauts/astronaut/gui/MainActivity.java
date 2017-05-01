@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onTabSelected(@IdRes int tabId) {
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                if (tabId == R.id.tab_mirkoblog) {
+                if (tabId == R.id.tab_mikroblog) {
                     MikroblogFragment fragment = new MikroblogFragment();
                     transaction.replace(R.id.contentContainer, fragment);
                 }
