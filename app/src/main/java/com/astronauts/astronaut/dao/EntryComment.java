@@ -110,16 +110,17 @@ public class EntryComment {
         this.entry = entry;
     }
 
-    public EntryComment(int id, String author, Avatar authorAvatar, URI authorGroup, Date date, String body, int voteCount, int userVote, Dig[] voters, Embed embed) {
-        setId(id);
-        setAuthor(author);
-        setAuthorAvatar(authorAvatar);
-        setAuthorGroup(authorGroup);
-        setDate(date);
-        setBody(body);
-        setVoteCount(voteCount);
-        setUserVote(userVote);
-        setVoters(voters);
-        setEmbed(embed);
+    public EntryComment(int id, String author, Avatar authorAvatar, URI authorGroup, Date date, String body, int voteCount, int userVote, Dig[] voters, Embed embed, Entry entry) {
+        this.id = id;
+        this.author = author;
+        this.authorAvatar = authorAvatar;
+        this.authorGroup = authorGroup;
+        this.date = date;
+        this.body = body;
+        this.voteCount = voteCount;
+        this.userVote = userVote;
+        this.voters = voters;
+        this.embed = embed;
+        this.entry = entry;
     }
 }

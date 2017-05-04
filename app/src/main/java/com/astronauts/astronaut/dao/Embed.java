@@ -57,11 +57,10 @@ public class Embed {
     }
 
     public Embed(embedType type, URI preview, URI url, String source, boolean plus18) {
-        setType(type);
-        setPreview(preview);
-        setUrl(url);
-        setSource(source);
-        setPlus18(plus18);
+        this.type = type;
+        this.preview = preview;
+        this.url = url;
+        this.source = source;
+        this.plus18 = plus18;
     }
-
 }

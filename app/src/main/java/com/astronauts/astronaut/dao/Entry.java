@@ -155,22 +155,21 @@ public class Entry {
     }
 
     public Entry(int id, String author, Avatar authorAvatar, URI authorGroup, Date date, String body, URI url, String receiver, Avatar receiverAvatar, URI receiverGroup, EntryComment[] comments, int voteCount, int userVote, Dig[] voters, boolean userFavorite, Embed embed) {
-        setId(id);
-        setAuthor(author);
-        setAuthorAvatar(authorAvatar);
-        setAuthorGroup(authorGroup);
-        setDate(date);
-        setBody(body);
-        setUrl(url);
-        setReceiver(receiver);
-        setReceiverAvatar(receiverAvatar);
-        setReceiverGroup(receiverGroup);
-        setComments(comments);
-        setVoteCount(voteCount);
-        setUserVote(userVote);
-        setVoters(voters);
-        setUserFavorite(userFavorite);
-        setEmbed(embed);
+        this.id = id;
+        this.author = author;
+        this.authorAvatar = authorAvatar;
+        this.authorGroup = authorGroup;
+        this.date = date;
+        this.body = body;
+        this.url = url;
+        this.receiver = receiver;
+        this.receiverAvatar = receiverAvatar;
+        this.receiverGroup = receiverGroup;
+        this.comments = comments;
+        this.voteCount = voteCount;
+        this.userVote = userVote;
+        this.voters = voters;
+        this.userFavorite = userFavorite;
+        this.embed = embed;
     }
-
 }

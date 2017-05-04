@@ -38,8 +38,8 @@ public class Dig {
     }
 
     public Dig(String author, Avatar authorAvatar, URI authorGroup) {
-        setAuthor(author);
-        setAuthorAvatar(authorAvatar);
-        setAuthorGroup(authorGroup);
+        this.author = author;
+        this.authorAvatar = authorAvatar;
+        this.authorGroup = authorGroup;
     }
 }

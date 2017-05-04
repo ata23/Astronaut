@@ -44,11 +44,10 @@ public class Avatar {
     }
 
 
-    public Avatar(URI low, URI medium, URI normal, String owner){
-        setAvatar(low,avatarQuality.low);
-        setAvatar(medium,avatarQuality.medium);
-        setAvatar(normal,avatarQuality.normal);
-        setOwner(owner);
+    public Avatar(URI normal, URI medium, URI low, String owner) {
+        this.normal = normal;
+        this.medium = medium;
+        this.low = low;
+        this.owner = owner;
     }
-
 }
