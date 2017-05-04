@@ -1,4 +1,4 @@
-package com.astronauts.astronaut.dao;
+package com.astronauts.astronaut.dao.object;
 
 import java.net.URI;
 import java.util.Date;
