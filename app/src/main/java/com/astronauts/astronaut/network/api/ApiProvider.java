@@ -217,7 +217,7 @@ public interface ApiProvider {
                                   @Path("userkey") String userkey, @Path("appkey") String appkey,
                                   @Header("apisign") String sign);
 
-    @POST("related/plus/{linkId}/userkey/{userKey}/appkey/{appkey}/")
+    @POST("related/add/{linkId}/userkey/{userKey}/appkey/{appkey}/")
     Call<JSONObject> relatedAdd(@Path("linkId") String linkId, @Path("userkey") String userkey,
                                 @Path("appkey") String appkey, @Field("url") String url,
                                 @Field("title") String title, @Field("plus18") String plus18,
@@ -312,5 +312,49 @@ public interface ApiProvider {
     Call<JSONObject> entriesFavorite(@Path("entryId") String entryId, @Path("userkey") String userkey,
                                      @Path("appkey") String appkey, @Header("apisign") String sign);
 
+    @POST("rank/index/{order}/appkey/{appkey}")
+    Call<JSONObject> rankIndex(@Path("order") String order, @Path("appkey") String appkey,
+                               @Header("apisign") String sign);
+
+    @POST("observatory/votes/appkey/{appkey}/")
+    Call<JSONObject> observatoryVotes(@Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("observatory/comments/appkey/{appkey}/")
+    Call<JSONObject> observatoryComments(@Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("observatory/entries/appkey/{appkey}/")
+    Call<JSONObject> observatoryEntries(@Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("observatory/entriescomments/appkey/{appkey}/")
+    Call<JSONObject> observatoryEntriesComments(@Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("favorites/index/{listId}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> favoritesIndex(@Path("listId") String listId, @Path("userkey") String userkey,
+                                    @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("favorites/comments/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> favoritesComments(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                       @Header("apisign") String sign);
+
+    @POST("favorites/entries/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> favoritesEntries(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                      @Header("apisign") String sign);
+
+    @POST("favorites/lists/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> favoritesLists(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                    @Header("apisign") String sign);
+
+    @POST("stream/index/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> streamIndex(@Path("appkey") String appkey, @Path("page") String page,
+                                 @Header("apisign") String sign);
+
+    @POST("stream/hot/appkey/{appkey}/page/{page}/period/{period}/")
+    Call<JSONObject> streamHot(@Path("appkey") String appkey, @Path("page") String page,
+                                @Path("period") String period, @Header("apisign") String sign);
+
+    @POST("tag/index/{tagName}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> tagIndex(@Path("tagName") String tagName, @Path("appkey") String appkey,
+                              @Path("page") String page, @Header("apisign") String sign);
+    
 
 }
