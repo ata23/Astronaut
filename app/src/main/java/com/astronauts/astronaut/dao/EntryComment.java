@@ -2,6 +2,7 @@ package com.astronauts.astronaut.dao;
 
 import java.net.URI;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by end on 04.05.17.
@@ -17,7 +18,7 @@ public class EntryComment implements EntryBasics {
     private String body;
     private int voteCount;
     private int userVote;
-    private Dig[] voters;
+    private List<Dig> voters;
     private Embed embed;
     private Entry entry;
 
@@ -86,11 +87,11 @@ public class EntryComment implements EntryBasics {
         this.userVote = userVote;
     }
 
-    public Dig[] getVoters() {
+    public List<Dig> getVoters() {
         return voters;
     }
 
-    public void setVoters(Dig[] voters) {
+    public void setVoters(List<Dig> voters) {
         this.voters = voters;
     }
 
@@ -110,7 +111,7 @@ public class EntryComment implements EntryBasics {
         this.entry = entry;
     }
 
-    public EntryComment(int id, String author, Avatar authorAvatar, URI authorGroup, Date date, String body, int voteCount, int userVote, Dig[] voters, Embed embed, Entry entry) {
+    public EntryComment(int id, String author, Avatar authorAvatar, URI authorGroup, Date date, String body, int voteCount, int userVote, List<Dig> voters, Embed embed, Entry entry) {
         this.id = id;
         this.author = author;
         this.authorAvatar = authorAvatar;

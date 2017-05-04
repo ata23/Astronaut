@@ -2,6 +2,7 @@ package com.astronauts.astronaut.dao;
 
 import java.net.URI;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by end on 01.05.17.
@@ -13,7 +14,7 @@ public class Entry extends EntryComment implements EntryBasics {
     private String receiver;
     private Avatar receiverAvatar;
     private URI receiverGroup;
-    private EntryComment[] comments;
+    private List<EntryComment> comments;
     private boolean userFavorite;
 
     public URI getUrl() {
@@ -40,11 +41,11 @@ public class Entry extends EntryComment implements EntryBasics {
         this.receiverGroup = receiverGroup;
     }
 
-    public EntryComment[] getComments() {
+    public List<EntryComment> getComments() {
         return comments;
     }
 
-    public void setComments(EntryComment[] comments) {
+    public void setComments(List<EntryComment> comments) {
         this.comments = comments;
     }
 
@@ -64,7 +65,7 @@ public class Entry extends EntryComment implements EntryBasics {
         this.receiverAvatar = receiverAvatar;
     }
 
-    public Entry(int id, String author, Avatar authorAvatar, URI authorGroup, Date date, String body, URI url, String receiver, Avatar receiverAvatar, URI receiverGroup, EntryComment[] comments, int voteCount, int userVote, Dig[] voters, boolean userFavorite, Embed embed) {
+    public Entry(int id, String author, Avatar authorAvatar, URI authorGroup, Date date, String body, URI url, String receiver, Avatar receiverAvatar, URI receiverGroup, List<EntryComment> comments, int voteCount, int userVote, List<Dig> voters, boolean userFavorite, Embed embed) {
         super(id, author, authorAvatar, authorGroup, date, body, voteCount, userVote, voters, embed, null);
         this.url = url;
         this.receiver = receiver;

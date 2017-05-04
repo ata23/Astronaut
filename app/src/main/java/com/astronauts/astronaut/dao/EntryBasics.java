@@ -2,6 +2,7 @@ package com.astronauts.astronaut.dao;
 
 import java.net.URI;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by end on 04.05.17.
@@ -40,9 +41,9 @@ public interface EntryBasics {
 
     public void setUserVote(int userVote);
 
-    public Dig[] getVoters();
+    public List<Dig> getVoters();
 
-    public void setVoters(Dig[] voters);
+    public void setVoters(List<Dig> voters);
 
     public Embed getEmbed();
 
