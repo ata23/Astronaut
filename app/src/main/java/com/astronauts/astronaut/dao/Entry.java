@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by end on 01.05.17.
  */
 
-public class Entry extends EntryComment {
+public class Entry extends EntryComment implements EntryBasics {
 
     private URI url;
     private String receiver;

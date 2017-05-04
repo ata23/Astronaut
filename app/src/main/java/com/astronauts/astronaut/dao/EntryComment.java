@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by end on 04.05.17.
  */
 
-public class EntryComment {
+public class EntryComment implements EntryBasics {
 
     private int id;
     private String author;
