@@ -8,7 +8,7 @@ import java.net.URI;
 
 public class Embed {
 
-    public enum Type {image, video}
+    enum Type {image, video}
 
     private Type type;
     private URI preview;

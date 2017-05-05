@@ -9,47 +9,47 @@ import java.util.List;
  */
 
 public interface EntryBasics {
-    public int getId();
+    int getId();
 
-    public void setId(int id);
+    void setId(int id);
 
-    public String getAuthor();
+    String getAuthor();
 
-    public void setAuthor(String author);
+    void setAuthor(String author);
 
-    public Avatar getAuthorAvatar();
+    Avatar getAuthorAvatar();
 
-    public void setAuthorAvatar(Avatar authorAvatar);
+    void setAuthorAvatar(Avatar authorAvatar);
 
-    public URI getAuthorGroup();
+    URI getAuthorGroup();
 
-    public void setAuthorGroup(URI authorGroup);
+    void setAuthorGroup(URI authorGroup);
 
-    public Date getDate();
+    Date getDate();
 
-    public void setDate(Date date);
+    void setDate(Date date);
 
-    public String getBody();
+    String getBody();
 
-    public void setBody(String body);
+    void setBody(String body);
 
-    public int getVoteCount();
+    int getVoteCount();
 
-    public void setVoteCount(int voteCount);
+    void setVoteCount(int voteCount);
 
-    public int getUserVote();
+    int getUserVote();
 
-    public void setUserVote(int userVote);
+    void setUserVote(int userVote);
 
-    public List<Dig> getVoters();
+    List<Dig> getVoters();
 
-    public void setVoters(List<Dig> voters);
+    void setVoters(List<Dig> voters);
 
-    public Embed getEmbed();
+    Embed getEmbed();
 
-    public void setEmbed(Embed embed);
+    void setEmbed(Embed embed);
 
-    public Entry getEntry();
+    Entry getEntry();
 
-    public void setEntry(Entry entry);
+    void setEntry(Entry entry);
 }

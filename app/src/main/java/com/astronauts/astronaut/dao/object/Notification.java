@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class Notification {
 
-    public enum Type {
+    enum Type {
         register,
         observe,
         unobserve,

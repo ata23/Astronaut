@@ -10,7 +10,7 @@ public class Profile {
 
     private String login;
     private String email;
-    private  String publicEmail;
+    private String publicEmail;
     private String name;
     private URI www;
     private String jabber;
