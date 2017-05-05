@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.astro_naut.astronaut"
         minSdkVersion 15
@@ -25,7 +25,6 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:25.3.0'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
     //Custom frameworks
 
@@ -48,11 +47,6 @@ dependencies {
     testCompile 'org.mockito:mockito-core:2.7.22'
     androidTestCompile 'org.mockito:mockito-android:2.7.22'
     provided 'javax.annotation:jsr250-api:1.0'
-
-    //Mosby - probably we will not use this..
-//    compile 'com.hannesdorfmann.mosby3:mvi:3.0.2'
-//    compile 'com.hannesdorfmann.mosby3:mvp:3.0.2'
-//    compile 'com.hannesdorfmann.mosby3:viewstate:3.0.2'
 
     //RxJava
     compile "io.reactivex.rxjava2:rxjava:2.0.9"
