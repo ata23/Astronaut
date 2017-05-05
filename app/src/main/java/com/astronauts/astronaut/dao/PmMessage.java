@@ -1,4 +1,4 @@
-package com.astronauts.astronaut.dao.object;
+package com.astronauts.astronaut.dao;
 
 import java.util.Date;
 

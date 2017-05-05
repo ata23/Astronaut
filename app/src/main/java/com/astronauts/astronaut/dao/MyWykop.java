@@ -1,4 +1,4 @@
-package com.astronauts.astronaut.dao.object;
+package com.astronauts.astronaut.dao;
 
 /**
  * Created by end on 01.05.17.
