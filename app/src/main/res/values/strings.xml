@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Astronaut</string>
+    <string name="appkey">appkeygoeshere</string>
+    <string name="secret">secretkeygoeshere</string>
 </resources>
