@@ -8,20 +8,19 @@ import java.net.URI;
 
 public class Embed {
 
-    enum Type {image, video}
 
-    private Type type;
+    private Enum.EmbedType embedType;
     private URI preview;
     private URI url;
     private String source;
     private boolean plus18;
 
-    public Type getType() {
-        return type;
+    public Enum.EmbedType getEmbedType() {
+        return embedType;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setEmbedType(Enum.EmbedType embedType) {
+        this.embedType = embedType;
     }
 
     public URI getPreview() {
@@ -56,8 +55,8 @@ public class Embed {
         this.plus18 = plus18;
     }
 
-    public Embed(Type type, URI preview, URI url, String source, boolean plus18) {
-        this.type = type;
+    public Embed(Enum.EmbedType embedType, URI preview, URI url, String source, boolean plus18) {
+        this.embedType = embedType;
         this.preview = preview;
         this.url = url;
         this.source = source;

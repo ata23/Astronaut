@@ -8,13 +8,12 @@ import java.net.URI;
 
 public class Avatar {
 
-    enum Quality {normal, medium, low}
 
     private URI normal, medium, low;
     private String owner;
 
-    public void setAvatar(URI authorAvatar, Quality quality) {
-        switch (quality) {
+    public void setAvatar(URI authorAvatar, Enum.AvatarQuality avatarQuality) {
+        switch (avatarQuality) {
             case medium:
                 this.medium = authorAvatar;
             case low:
@@ -24,8 +23,8 @@ public class Avatar {
         }
     }
 
-    public URI getAvatar(Quality quality) {
-        switch (quality) {
+    public URI getAvatar(Enum.AvatarQuality avatarQuality) {
+        switch (avatarQuality) {
             case medium:
                 return medium;
             case low:

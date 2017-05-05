@@ -8,17 +8,14 @@ import java.util.Date;
 
 public class PmMessage {
 
-    enum Status {unread, read}
-
-    enum Direction {sended, received}
 
     private Avatar authorAvatar;
     private int authorGroup;
     private String authorSex;
     private Date date;
     private String body;
-    private Status status;
-    private Direction direction;
+    private Enum.MessageStatus messageStatus;
+    private Enum.MessageDirection messageDirection;
 
     public Avatar getAuthorAvatar() {
         return authorAvatar;
@@ -60,29 +57,29 @@ public class PmMessage {
         this.body = body;
     }
 
-    public Status getStatus() {
-        return status;
+    public Enum.MessageStatus getMessageStatus() {
+        return messageStatus;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setMessageStatus(Enum.MessageStatus messageStatus) {
+        this.messageStatus = messageStatus;
     }
 
-    public Direction getDirection() {
-        return direction;
+    public Enum.MessageDirection getMessageDirection() {
+        return messageDirection;
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
+    public void setMessageDirection(Enum.MessageDirection messageDirection) {
+        this.messageDirection = messageDirection;
     }
 
-    public PmMessage(Avatar authorAvatar, int authorGroup, String authorSex, Date date, String body, Status status, Direction direction) {
+    public PmMessage(Avatar authorAvatar, int authorGroup, String authorSex, Date date, String body, Enum.MessageStatus messageStatus, Enum.MessageDirection messageDirection) {
         this.authorAvatar = authorAvatar;
         this.authorGroup = authorGroup;
         this.authorSex = authorSex;
         this.date = date;
         this.body = body;
-        this.status = status;
-        this.direction = direction;
+        this.messageStatus = messageStatus;
+        this.messageDirection = messageDirection;
     }
 }

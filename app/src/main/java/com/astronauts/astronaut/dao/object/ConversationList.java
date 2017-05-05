@@ -8,12 +8,10 @@ import java.util.Date;
 
 public class ConversationList {
 
-    enum Status {unread, read}
-
     private Date lastUpdate;
     private Avatar authorAvatar;
     private String authorSex;
-    private Status status;
+    private Enum.MessageStatus messageStatus;
 
     public Date getLastUpdate() {
         return lastUpdate;
@@ -39,18 +37,18 @@ public class ConversationList {
         this.authorSex = authorSex;
     }
 
-    public Status getStatus() {
-        return status;
+    public Enum.MessageStatus getMessageStatus() {
+        return messageStatus;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setMessageStatus(Enum.MessageStatus messageStatus) {
+        this.messageStatus = messageStatus;
     }
 
-    public ConversationList(Date lastUpdate, Avatar authorAvatar, String authorSex, Status status) {
+    public ConversationList(Date lastUpdate, Avatar authorAvatar, String authorSex, Enum.MessageStatus messageStatus) {
         this.lastUpdate = lastUpdate;
         this.authorAvatar = authorAvatar;
         this.authorSex = authorSex;
-        this.status = status;
+        this.messageStatus = messageStatus;
     }
 }
