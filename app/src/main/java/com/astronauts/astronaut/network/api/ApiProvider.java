@@ -394,4 +394,12 @@ public interface ApiProvider {
                                    @Path("appkey") String appkey, @Field("body") String content,
                                    @Field("embed") String url, @Header("apisign") String sign);
 
+    @POST("pm/deleteconversation/{userName}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> pmDeleteConversation(@Path("userName") String userName, @Path("userkey") String userkey,
+                                          @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("tags/index/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> tagsIndex(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                               @Header("apisign") String sign);
+
 }
