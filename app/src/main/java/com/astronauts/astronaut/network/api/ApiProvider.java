@@ -312,7 +312,7 @@ public interface ApiProvider {
     Call<JSONObject> entriesFavorite(@Path("entryId") String entryId, @Path("userkey") String userkey,
                                      @Path("appkey") String appkey, @Header("apisign") String sign);
 
-    @POST("rank/index/{order}/appkey/{appkey}")
+    @POST("rank/index/{order}/appkey/{appkey}/")
     Call<JSONObject> rankIndex(@Path("order") String order, @Path("appkey") String appkey,
                                @Header("apisign") String sign);
 
@@ -355,6 +355,43 @@ public interface ApiProvider {
     @POST("tag/index/{tagName}/appkey/{appkey}/page/{page}/")
     Call<JSONObject> tagIndex(@Path("tagName") String tagName, @Path("appkey") String appkey,
                               @Path("page") String page, @Header("apisign") String sign);
-    
+
+    @POST("tag/links/{tagName}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> tagLinks(@Path("tagName") String tagName, @Path("appkey") String appkey,
+                              @Path("page") String page, @Header("apisign") String sign);
+
+    @POST("tag/entries/{tagName}/appkey/{appkey}/page/{page}/")
+    Call<JSONObject> tagEntries(@Path("tagName") String tagName, @Path("appkey") String appkey,
+                              @Path("page") String page, @Header("apisign") String sign);
+
+    @POST("tag/observe/{tagName}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> tagObserve(@Path("tagName") String tagName, @Path("userkey") String userkey,
+                                @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("tag/unobserve/{tagName}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> tagUnobserve(@Path("tagName") String tagName, @Path("userkey") String userkey,
+                                @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("tag/block/{tagName}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> tagBlock(@Path("tagName") String tagName, @Path("userkey") String userkey,
+                                  @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("tag/unblock/{tagName}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> tagUnblock(@Path("tagName") String tagName, @Path("userkey") String userkey,
+                                  @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    @POST("pm/conversationslist/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> pmConversationsList(@Path("userkey") String userkey, @Path("appkey") String appkey,
+                                     @Header("apisign") String sign);
+
+    @POST("pm/conversation/{userName}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> pmConversation(@Path("userName") String userName, @Path("userkey") String userkey,
+                                    @Path("appkey") String appkey, @Header("apisign") String sign);
+
+    //TODO Add FILE parameter in this request
+    @POST("pm/sendmessage/{userName}/userkey/{userkey}/appkey/{appkey}/")
+    Call<JSONObject> pmSendMessage(@Path("userName") String userName, @Path("userkey") String userkey,
+                                   @Path("appkey") String appkey, @Field("body") String content,
+                                   @Field("embed") String url, @Header("apisign") String sign);
 
 }
